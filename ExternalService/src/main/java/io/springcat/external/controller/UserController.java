@@ -33,12 +33,7 @@ public class UserController {
 	
 	@RequestMapping(value="/test", method=RequestMethod.GET)
 	public String getUser(@PathParam(value="id") Long id){
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		return "test:" + userService.findUserById(id).getUsername();
+		return userService.findUserById(id).getUsername();
 	}
 	
 	

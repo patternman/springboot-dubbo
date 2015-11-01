@@ -29,11 +29,7 @@ import org.springframework.context.annotation.ImportResource;
 public class ServiceApplication {
 
 	/**
-	 * @Title: main
-	 * @Description: TODO(这里用一句话描述这个方法的作用)
-	 * @param @param args 设定文件
-	 * @return void 返回类型
-	 * @throws
+	 * @Description: 无servlet容器模式启动
 	 */
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(ServiceApplication.class);
