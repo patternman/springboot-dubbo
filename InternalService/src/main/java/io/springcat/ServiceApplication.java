@@ -39,8 +39,6 @@ public class ServiceApplication {
 		SpringApplication app = new SpringApplication(ServiceApplication.class);
         app.setWebEnvironment(false); 
         ConfigurableApplicationContext ctx = app.run(args);
-		IUserDao userDAO = (IUserDao)ctx.getBean("userDAO");
-		System.out.println(userDAO.get(1L));
 	}
 
 }
