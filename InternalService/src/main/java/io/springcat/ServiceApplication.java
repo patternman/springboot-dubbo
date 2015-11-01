@@ -41,11 +41,6 @@ public class ServiceApplication {
         ConfigurableApplicationContext ctx = app.run(args);
 		IUserDao userDAO = (IUserDao)ctx.getBean("userDAO");
 		System.out.println(userDAO.get(1L));
-//		try {
-//			System.in.read();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
 	}
 
 }

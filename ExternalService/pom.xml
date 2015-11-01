@@ -18,7 +18,7 @@
 			<artifactId>GlobalDef</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.springcat</groupId>
 			<artifactId>GlobalConfig</artifactId>
@@ -41,13 +41,13 @@
 		</dependency>
 
 		<dependency>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-starter-security</artifactId>
-			</dependency> 
-			
-			<dependency>
-				 <groupId>org.springframework.data</groupId>
-				 <artifactId>spring-data-commons</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons</artifactId>
 		</dependency>
 
 		<dependency>
