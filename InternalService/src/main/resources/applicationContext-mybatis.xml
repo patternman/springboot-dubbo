@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+ 
+	<!-- MyBatis配置 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="userDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	  <property name="mapperInterface" value="io.springcat.repository.mybatis.IUserDao" />
+	  <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="io.springcat" />
+		<property name="annotationClass" value="io.springcat.repository.mybatis.MybatisRepository"/>
+	</bean>
+	
+	<!-- local development环境 -->
+	<beans profile="dev">
+		<!-- Tomcat JDBC连接池 -->
+		<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+			<property name="url" value="jdbc:mysql://192.168.43.88:3306/springcat" />
+			<property name="username" value="root" />
+			<property name="password" value="123123" />
+			<property name="filters" value="stat, log4j" />
+		</bean>
+	</beans>
+	
+ 
+</beans>
