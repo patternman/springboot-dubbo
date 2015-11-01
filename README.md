@@ -1,2 +1,2 @@
 # springboot-dubbo
-springboot + dubbo + CAT integration
+sample for springboot + dubbo + CAT integration
