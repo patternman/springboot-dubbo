@@ -21,7 +21,7 @@
 
 		<dependency>
 			<groupId>io.springcat</groupId>
-			<artifactId>GlobalConfig</artifactId>
+			<artifactId>GlobalWebConfig</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
