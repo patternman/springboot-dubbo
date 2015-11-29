@@ -11,10 +11,10 @@ package io.springcat.internal.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import io.springcat.dto.UserDTO;
 import io.springcat.repository.mybatis.IUserDao;
 import io.springcat.service.IUserService;
 import io.springcat.util.BeanUtil;
-import io.springcat.vo.UserView;
 
 /**
  * @ClassName: UserService
@@ -28,10 +28,8 @@ public class UserService implements IUserService {
 	IUserDao userDAO;
 
 	@Override
-	public UserView findUserById(Long id) {
-		return BeanUtil.convertBean(userDAO.get(id), UserView.class);
+	public UserDTO findUserById(Long id) {
+		return BeanUtil.convertBean(userDAO.get(id), UserDTO.class);
 	}
-	
-	
 
 }

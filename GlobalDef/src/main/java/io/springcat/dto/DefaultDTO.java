@@ -7,7 +7,7 @@
  * @date: 2015年3月2日 下午11:45:37
  * @version: V1.0  
  */
-package io.springcat.vo;
+package io.springcat.dto;
 
 
 /**
@@ -16,7 +16,7 @@ package io.springcat.vo;
  * @author: adampeng
  * @date: 2015年3月2日 下午11:45:37
  */
-public class DefaultView extends BaseView {
+public class DefaultDTO extends BaseDTO {
 
 	private static final long serialVersionUID = 7350839561682611292L;
 

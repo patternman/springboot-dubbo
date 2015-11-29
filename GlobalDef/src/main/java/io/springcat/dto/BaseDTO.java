@@ -7,7 +7,7 @@
  * @date: 2015年3月6日 下午2:02:49
  * @version: V1.0  
  */
-package io.springcat.vo;
+package io.springcat.dto;
 
 import java.io.Serializable;
 
@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @author: adampeng
  * @date: 2015年3月6日 下午2:02:49
  */
-public class BaseView implements Serializable{
+public class BaseDTO implements Serializable{
 
 	/**
 	  * @Fields serialVersionUID : TODO（用一句话描述这个变量表示什么）

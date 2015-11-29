@@ -7,7 +7,7 @@
  * @date: 2015年2月26日 上午11:21:33
  * @version: V1.0  
  */
-package io.springcat.vo;
+package io.springcat.dto;
 
 /**
  * @ClassName: User
@@ -15,7 +15,7 @@ package io.springcat.vo;
  * @author: adampeng
  * @date: 2015年2月26日 上午11:21:33
  */
-public class UserView extends BaseView{
+public class UserDTO extends BaseDTO{
 	
 	private static final long serialVersionUID = -4265114571895428359L;
 
@@ -23,16 +23,16 @@ public class UserView extends BaseView{
 	
 	private String mobile;
 	
-	public UserView(){
+	public UserDTO(){
 		
 	}
 	
-	public UserView(String username) {
+	public UserDTO(String username) {
 		super();
 		this.username = username;
 	}
 	
-	public UserView(String username, String mobile) {
+	public UserDTO(String username, String mobile) {
 		super();
 		this.username = username;
 		this.mobile = mobile;

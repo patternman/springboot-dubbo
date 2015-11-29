@@ -9,7 +9,6 @@
  */
 package io.springcat;
 
-import io.springcat.repository.mybatis.IUserDao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -35,6 +34,11 @@ public class ServiceApplication {
 		SpringApplication app = new SpringApplication(ServiceApplication.class);
         app.setWebEnvironment(false); 
         ConfigurableApplicationContext ctx = app.run(args);
+        while(true){
+        	try {
+				Thread.sleep(Long.MAX_VALUE);
+			} catch (InterruptedException e) {}
+        }
 	}
 
 }

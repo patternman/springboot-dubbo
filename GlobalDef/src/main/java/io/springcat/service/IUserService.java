@@ -9,7 +9,10 @@
  */
 package io.springcat.service;
 
-import io.springcat.vo.UserView;
+import io.springcat.dto.UserDTO;
+
+import java.net.URL;
+import java.util.List;
 
 
 /**
@@ -21,15 +24,10 @@ import io.springcat.vo.UserView;
 public interface IUserService {
 	
 	/**
-	 * 
-	* @Title: findUser 
-	* @Description: TODO(这里用一句话描述这个方法的作用) 
-	* @param @param username
-	* @param @return    设定文件 
-	* @return UserView    返回类型 
-	* @throws
+	 * 根据ID查询用户信息
+	 * @param id
+	 * @return
 	 */
-	UserView findUserById(Long id);
+	UserDTO findUserById(Long id);
 	
-
 }

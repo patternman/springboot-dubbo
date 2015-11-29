@@ -4,11 +4,15 @@
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
  
-    <import resource="applicationContext-mybatis.xml" />
-    <import resource="provider.xml" />
-    
-    <!-- 
-    <import resource="applicationContext-disconf.xml" /> 
-    -->
+    <!-- 使用disconf必须添加以下配置 -->
+	<bean id="disconfMgrBean" class="com.baidu.disconf.client.DisconfMgrBean"
+	      destroy-method="destory">
+	    <property name="scanPackage" value="io.springcat"/>
+	</bean>
+	<bean id="disconfMgrBean2" class="com.baidu.disconf.client.DisconfMgrBeanSecond"
+	      init-method="init" destroy-method="destory">
+	</bean>
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
     
 </beans>
