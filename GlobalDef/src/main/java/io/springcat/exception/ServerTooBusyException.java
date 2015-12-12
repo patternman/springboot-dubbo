@@ -7,7 +7,7 @@ package io.springcat.exception;
  * @author adampeng
  *
  */
-public class ServerTooBusyException extends Exception {
+public class ServerTooBusyException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

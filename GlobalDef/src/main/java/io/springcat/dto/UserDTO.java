@@ -19,6 +19,9 @@ public class UserDTO extends BaseDTO{
 	
 	private static final long serialVersionUID = -4265114571895428359L;
 
+	/*
+	 * 用户名
+	 */
 	private String username;
 	
 	private String mobile;

@@ -15,6 +15,7 @@ import io.springcat.service.IUserService;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,12 +31,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 	
-	@Autowired
+	@Autowired @Qualifier("userService")
 	IUserService userService;
 	
+	@Autowired @Qualifier("userServiceV2")
+	IUserService userServiceV2;
+	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public UserDTO getUser(@PathVariable("id") Long id){
-		return userService.findUserById(id);
+	public UserDTO getUser(@PathVariable("id") Long id,@PathParam("version") String version){
+		switch(version){
+		case "1.0":
+			return userService.findUserById(id);
+		case "2.0":
+			return userServiceV2.findUserById(id);
+			default:
+				throw new IllegalAccessError("不支持该版本调用！");
+		}
 	}
 	
 }

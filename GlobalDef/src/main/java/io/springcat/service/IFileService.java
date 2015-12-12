@@ -19,6 +19,6 @@ public interface IFileService {
 	 * @throws FileNotExistsException   目标文件不存在
 	 * @throws ServerTooBusyException   服务器节点正忙，稍后再试
 	 */
-	ExecuteStatusDTO calData() throws FileNotExistsException, ServerTooBusyException; 
+	ExecuteStatusDTO calData(Object sourceData) throws FileNotExistsException, ServerTooBusyException; 
 	
 }

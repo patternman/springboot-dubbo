@@ -18,9 +18,9 @@ public class FileService implements IFileService {
 	 * @see io.springcat.service.IFileService#calData()
 	 */
 	@Override
-	public ExecuteStatusDTO calData() throws FileNotExistsException,
+	public ExecuteStatusDTO calData(Object sourceData) throws FileNotExistsException,
 			ServerTooBusyException {
-		return null;
+		return new ExecuteStatusDTO();
 	}
 
 }

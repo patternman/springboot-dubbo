@@ -7,7 +7,7 @@ package io.springcat.exception;
  * @author adampeng
  *
  */
-public class FileNotExistsException extends Exception {
+public class FileNotExistsException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

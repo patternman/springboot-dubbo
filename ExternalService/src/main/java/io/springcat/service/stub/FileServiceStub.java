@@ -24,19 +24,16 @@ public class FileServiceStub implements IFileService {
 	 * AOP，做容错处理
 	 */
 	@Override
-	public ExecuteStatusDTO calData() {
+	public ExecuteStatusDTO calData(Object object) {
 		try{
-			return fileService.calData();
+			return fileService.calData(object);
 		}catch(FileNotExistsException fne){
 			//文件不存在，错误信息写库或写mq等待处理
 			return null;
 		}catch(ServerTooBusyException stbe){
 			//服务器繁忙，等待后重试
 			//可通过ThreadLocal 记录 重试次数，限定重试次数
-			try {
-				Thread.sleep(10000);
-			} catch (InterruptedException e) {}
-			return calData();
+			return null;
 		}
 	}
 
