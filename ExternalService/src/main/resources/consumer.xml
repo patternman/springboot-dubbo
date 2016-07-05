@@ -20,14 +20,20 @@
 
 	<!-- 生成远程服务代理，可以和本地bean一样使用 -->
 	<dubbo:reference interface="io.springcat.service.IUserService"
-		id="userService" stub="io.springcat.service.stub.UserServiceStub" version="1.0" />
+		id="userService" 
+		stub="io.springcat.service.stub.UserServiceStub" version="1.0" />
 	
 	<dubbo:reference interface="io.springcat.service.IUserService"
-		id="userServiceV2" stub="io.springcat.service.stub.UserServiceStub" version="2.0" />
+		id="userServiceV2" 
+		stub="io.springcat.service.stub.UserServiceStub" version="2.0" />
+	
+	<dubbo:reference interface="io.springcat.service.IOrderService"
+		id="orderService" />
 	
 	<!-- 生成远程服务代理，可以和本地bean一样使用 -->
 	<dubbo:reference interface="io.springcat.service.IFileService"
-		id="fileServiceDubbo" version="1.0" stub="io.springcat.service.stub.FileServiceStub" />
+		id="fileServiceDubbo" version="1.0" 
+		stub="io.springcat.service.stub.FileServiceStub" />
 	
 	<!-- 生成远程服务代理，可以和本地bean一样使用 -->
 	<dubbo:reference interface="io.springcat.service.IFileService"

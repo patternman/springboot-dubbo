@@ -25,14 +25,23 @@
     <bean id="userService" class="io.springcat.internal.service.impl.UserService" />
     <bean id="userServiceV2" class="io.springcat.internal.service.impl.UserServiceVersion2" />
     
+    <bean id="orderService" class="io.springcat.internal.service.impl.OrderService"/>
+    
     <bean id="fileService" class="io.springcat.internal.service.impl.FileService" />
     
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="io.springcat.service.IUserService" version="1.0" ref="userService" executes="100" protocol="dubbo">
+    <dubbo:service interface="io.springcat.service.IUserService" 
+        version="1.0" ref="userService" executes="100" protocol="dubbo">
     	<dubbo:method name="findUserById" retries="5" />    
     </dubbo:service>
     
-    <dubbo:service interface="io.springcat.service.IUserService" version="2.0" ref="userServiceV2" executes="100" protocol="rmi">
+    <dubbo:service interface="io.springcat.service.IOrderService" 
+         ref="orderService" executes="100" protocol="rmi">
+    	<dubbo:method name="createOrder" retries="5" />    
+    </dubbo:service>
+    
+    <dubbo:service interface="io.springcat.service.IUserService" 
+        version="1.0" ref="userService" executes="100" protocol="dubbo">
     	<dubbo:method name="findUserById" retries="5" />    
     </dubbo:service>
     

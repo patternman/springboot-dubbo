@@ -13,6 +13,7 @@
   	<module>GlobalDef</module>
     <module>GlobalWebConfig</module>
     <module>DAL-REDIS</module>
+    <module>DAL-ZK</module>
   </modules>
   
   <properties>
@@ -38,7 +39,7 @@
 		
 		<disconf.version>2.6.27</disconf.version>
 		
-		<jedis.version>2.7.2</jedis.version>
+		<jedis.version>2.8.0</jedis.version>
 
 	</properties>
 	<dependencyManagement>
@@ -164,7 +165,7 @@
 				<version>${mybatis-spring.version}</version>
 			</dependency>
 			
-			<!-- disconf 分布式配置中心 -->
+			<!-- disconf 分布式配置中�? -->
 			<dependency>
 			    <groupId>com.baidu.disconf</groupId>
 			    <artifactId>disconf-client</artifactId>
@@ -282,7 +283,7 @@
 					<version>2.5.1</version>
 				</plugin>
 
-				<!-- enforcer插件, 避免被依赖的依赖引入过期的jar包 -->
+				<!-- enforcer插件, 避免被依赖的依赖引入过期的jar�? -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>

@@ -51,7 +51,7 @@ public class FileController {
 		_1mbString = new String(mb);
 		
 		StringBuilder sourceData = new StringBuilder();
-		for(int i = 0; i < 5; i++){
+		for(int i = 0; i < 10; i++){
 			sourceData.append(_1mbString);
 		} 
 		

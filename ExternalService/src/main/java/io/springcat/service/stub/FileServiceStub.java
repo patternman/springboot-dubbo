@@ -15,7 +15,7 @@ import io.springcat.service.IFileService;
 public class FileServiceStub implements IFileService {
 	
 	private final IFileService fileService;
-
+ 
 	public FileServiceStub(IFileService fileService) {
 		this.fileService = fileService;
 	}
